@@ -1,0 +1,26 @@
+{
+  "name": "airport_js_practice",
+  "version": "1.0.0",
+  "description": "building an airport app in javascript",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanodendaal/airport-js-practice.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Ruan Odendaal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruanodendaal/airport-js-practice/issues"
+  },
+  "homepage": "https://github.com/ruanodendaal/airport-js-practice#readme"
+}
