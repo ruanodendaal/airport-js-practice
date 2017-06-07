@@ -25,10 +25,21 @@ describe('Airport', function() {
       expect(airport.planes()).toEqual([plane]);
     });
 
+    it('can confirm if a specific plane is in the hangar', function() {
+      airport.clearForLanding(plane);
+      expect(airport.inHangar(plane)).toEqual(true);
+    });
+
     it('can clear planes for takeoff', function() {
       airport.clearForLanding(plane);
       airport.clearForTakeOff(plane);
       expect(airport.planes()).toEqual([]);
+      expect(airport.inHangar(plane)).toEqual(false);
+    });
+
+    it('should not land the same plane twice', function() {
+      airport.clearForLanding(plane);
+      expect(function() {airport.clearForLanding(plane); }).toThrowError('plane has already landed');
     });
   });
 

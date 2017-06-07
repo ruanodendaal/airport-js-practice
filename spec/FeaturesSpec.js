@@ -1,11 +1,13 @@
 'use strict';
 
 describe('Feature Test:', function(){
-  var plane;
-  var airport;
+var plane;
+var secondPlane;
+var airport;
 
   beforeEach(function(){
     plane = new Plane();
+    secondPlane = new Plane();
     airport = new Airport();
   });
 
@@ -17,6 +19,12 @@ describe('Feature Test:', function(){
     it('planes can be instructed to land at an airport', function(){
       plane.land(airport);
       expect(airport.planes()).toContain(plane);
+    });
+
+    it('can land more than one plane', function() {
+      plane.land(airport);
+      secondPlane.land(airport);
+      expect(airport.planes()).toContain(plane, secondPlane);
     });
 
     it('planes can be instructed to take off', function(){
