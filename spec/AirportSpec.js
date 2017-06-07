@@ -41,6 +41,10 @@ describe('Airport', function() {
       airport.clearForLanding(plane);
       expect(function() {airport.clearForLanding(plane); }).toThrowError('plane has already landed');
     });
+
+    it('should cannot takeoff a plane that has not landed', function() {
+      expect(function() {airport.clearForTakeOff(plane); }).toThrowError('plane not at airport');
+    });
   });
 
   describe('under stormy conditions',function(){

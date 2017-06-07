@@ -8,7 +8,7 @@ Plane.prototype = {
     this._location = airport;
   },
   takeoff: function(airport) {
-    this._location.clearForTakeOff();
+    this._location.clearForTakeOff(this);
   }
 
 };

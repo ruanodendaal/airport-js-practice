@@ -31,6 +31,8 @@ Airport.prototype.clearForLanding = function(plane) {
 Airport.prototype.clearForTakeOff = function(plane) {
   if(this._weather.isStormy()) {
     throw new Error('cannot takeoff due to stormy weather');
+  } else if (!this.inHangar(plane)) {
+    throw new Error('plane not at airport')
   }
   this._hangar = [];
 };
